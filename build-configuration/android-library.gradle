@@ -1,0 +1,82 @@
+/**
+ * Base build configuration for all android libraries (modules applying the android library plugin).
+ *
+ * Don't add any configuration here that is not common to *every* android library.
+ */
+apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
+apply plugin: "org.jetbrains.dokka"
+
+apply from: rootProject.file('build-configuration/detekt.gradle')
+apply from: rootProject.file('build-configuration/ktlint.gradle')
+
+assemble.dependsOn('lint')
+check.dependsOn('ktlint')
+
+configurations {
+    javadocDeps
+}
+
+if (System.getenv("JITPACK")) {
+    group='com.github.stripe.stripe-android'
+}
+
+android {
+    namespace STRIPE_ANDROID_NAMESPACE
+    resourcePrefix 'Stripe'
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion rootProject.ext.compileSdkVersion
+        consumerProguardFiles "consumer-rules.txt"
+
+        vectorDrawables.useSupportLibrary = true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // From https://developer.android.com/training/testing/junit-runner:
+        // > To remove all shared state from your device's CPU and memory after each test,
+        // > use the clearPackageData flag.
+        testInstrumentationRunnerArguments clearPackageData: 'true'
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs = ['res']
+        }
+    }
+
+    lint {
+        enable 'Interoperability'
+        lintConfig file('../settings/lint.xml')
+    }
+
+    lintOptions {
+        // Our workflow is to add a new string first and then have it translated in Lokalise. As a
+        // result, we will have a certain timespan during which there are no translations for the
+        // string yet.
+        disable 'MissingTranslation'
+    }
+
+    dokkaHtml {
+        outputDirectory = new File("${project.rootDir}/docs/$project.name")
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+
+    kotlin {
+        jvmToolchain {
+            languageVersion.set(JavaLanguageVersion.of("11"))
+        }
+    }
+}

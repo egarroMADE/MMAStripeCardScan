@@ -1,0 +1,10 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+module:mmastripecardscan
+com.mademediacorp.mmastripecardscan.cardimageverification
+com.mademediacorp.mmastripecardscan.cardimageverification.exception
+com.mademediacorp.mmastripecardscan.cardscan
+com.mademediacorp.mmastripecardscan.cardscan.exception
+com.mademediacorp.mmastripecardscan.payment.card
+com.mademediacorp.mmastripecardscan.scanui

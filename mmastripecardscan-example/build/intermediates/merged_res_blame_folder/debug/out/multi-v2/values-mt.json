@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-mergeDebugResources-59:/values-mt/values-mt.xml",
+            "map": [
+                {
+                    "source": "/Users/egarro/.gradle/caches/transforms-3/5e6539e8b407ab81d2beb27b84039d08/transformed/stripe-core-20.25.8/res/values-mt/values-mt.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,135,194,258,343,406,475,534,617,693,761,821",
+                        "endColumns": "79,58,63,84,62,68,58,82,75,67,59,72",
+                        "endOffsets": "130,189,253,338,401,470,529,612,688,756,816,889"
+                    }
+                }
+            ]
+        }
+    ]
+}

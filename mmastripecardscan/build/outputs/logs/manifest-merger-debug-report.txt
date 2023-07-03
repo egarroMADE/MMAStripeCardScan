@@ -1,0 +1,67 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:2:1-23:12
+	package
+		INJECTED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml
+		ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:2:1-23:12
+		INJECTED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.CAMERA
+ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:4:5-65
+	android:name
+		ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:4:22-62
+uses-permission#android.permission.FLASHLIGHT
+ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:5:5-69
+	android:name
+		ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:5:22-66
+uses-feature#android.hardware.camera
+ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:7:5-85
+	android:required
+		ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:7:58-82
+	android:name
+		ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:7:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:8:5-95
+	android:required
+		ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:8:68-92
+	android:name
+		ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:8:19-67
+uses-permission#android.permission.INTERNET
+ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:10:5-67
+	android:name
+		ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:10:22-64
+application
+ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:12:5-22:19
+activity#com.mademediacorp.mmastripecardscan.cardimageverification.CardImageVerificationActivity
+ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:13:9-16:65
+	android:screenOrientation
+		ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:15:13-49
+	android:theme
+		ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:16:13-62
+	android:name
+		ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:14:13-80
+activity#com.mademediacorp.mmastripecardscan.cardscan.CardScanActivity
+ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:18:9-21:65
+	android:screenOrientation
+		ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:20:13-49
+	android:theme
+		ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:21:13-62
+	android:name
+		ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:19:13-54
+uses-sdk
+INJECTED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml
+INJECTED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml
+INJECTED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml
+INJECTED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml
+		ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml
+		INJECTED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml
+		ADDED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml
+		INJECTED from /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml

@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-mergeDebugResources-60:/layout/activity_card_scan_demo.xml",
+        "source": "com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-main-63:/layout/activity_card_scan_demo.xml"
+    },
+    {
+        "merged": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-mergeDebugResources-60:/layout/activity_card_image_verification_demo.xml",
+        "source": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-main-63:/layout/activity_card_image_verification_demo.xml"
+    },
+    {
+        "merged": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-mergeDebugResources-60:/layout/activity_main.xml",
+        "source": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-main-63:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-mergeDebugResources-60:/layout/activity_card_scan_fragment_demo.xml",
+        "source": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-main-63:/layout/activity_card_scan_fragment_demo.xml"
+    },
+    {
+        "merged": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-mergeDebugResources-60:/layout/activity_card_scan_demo.xml",
+        "source": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-main-63:/layout/activity_card_scan_demo.xml"
+    }
+]

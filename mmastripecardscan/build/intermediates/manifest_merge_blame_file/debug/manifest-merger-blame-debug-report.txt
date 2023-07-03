@@ -1,0 +1,52 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.mademediacorp.mmastripecardscan" >
+4
+5    <uses-sdk android:minSdkVersion="21" />
+5-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml
+6
+7    <uses-permission android:name="android.permission.CAMERA" />
+7-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:4:5-65
+7-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:4:22-62
+8    <uses-permission android:name="android.permission.FLASHLIGHT" />
+8-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:5:5-69
+8-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:5:22-66
+9
+10    <uses-feature
+10-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:7:5-85
+11        android:name="android.hardware.camera"
+11-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:7:19-57
+12        android:required="false" />
+12-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:7:58-82
+13    <uses-feature
+13-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:8:5-95
+14        android:name="android.hardware.camera.autofocus"
+14-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:8:19-67
+15        android:required="false" />
+15-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:8:68-92
+16
+17    <uses-permission android:name="android.permission.INTERNET" />
+17-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:10:5-67
+17-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:10:22-64
+18
+19    <application>
+19-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:12:5-22:19
+20        <activity
+20-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:13:9-16:65
+21            android:name="com.mademediacorp.mmastripecardscan.cardimageverification.CardImageVerificationActivity"
+21-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:14:13-80
+22            android:screenOrientation="nosensor"
+22-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:15:13-49
+23            android:theme="@style/StripeCardScanDefaultTheme" />
+23-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:16:13-62
+24        <activity
+24-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:18:9-21:65
+25            android:name="com.mademediacorp.mmastripecardscan.cardscan.CardScanActivity"
+25-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:19:13-54
+26            android:screenOrientation="nosensor"
+26-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:20:13-49
+27            android:theme="@style/StripeCardScanDefaultTheme" />
+27-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/src/main/AndroidManifest.xml:21:13-62
+28    </application>
+29
+30</manifest>

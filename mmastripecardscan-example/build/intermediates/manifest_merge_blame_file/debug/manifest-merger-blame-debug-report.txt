@@ -1,0 +1,385 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.mademediacorp.mmastripecardscan.example"
+4    android:versionCode="2"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:5:5-67
+11-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.CAMERA" />
+12-->[:mmastripecardscan] /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-65
+12-->[:mmastripecardscan] /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:22-62
+13    <uses-permission android:name="android.permission.FLASHLIGHT" />
+13-->[:mmastripecardscan] /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:5-69
+13-->[:mmastripecardscan] /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:22-66
+14
+15    <uses-feature
+15-->[:mmastripecardscan] /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-12:36
+16        android:name="android.hardware.camera"
+16-->[:mmastripecardscan] /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:9-47
+17        android:required="false" />
+17-->[:mmastripecardscan] /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:9-33
+18    <uses-feature
+18-->[:mmastripecardscan] /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-15:36
+19        android:name="android.hardware.camera.autofocus"
+19-->[:mmastripecardscan] /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:9-57
+20        android:required="false" />
+20-->[:mmastripecardscan] /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:9-33
+21
+22    <permission
+22-->[androidx.core:core:1.9.0] /Users/egarro/.gradle/caches/transforms-3/f96df033ecbce2648c70ccaafe69a5b0/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+23        android:name="com.mademediacorp.mmastripecardscan.example.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+23-->[androidx.core:core:1.9.0] /Users/egarro/.gradle/caches/transforms-3/f96df033ecbce2648c70ccaafe69a5b0/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+24        android:protectionLevel="signature" />
+24-->[androidx.core:core:1.9.0] /Users/egarro/.gradle/caches/transforms-3/f96df033ecbce2648c70ccaafe69a5b0/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+25
+26    <uses-permission android:name="com.mademediacorp.mmastripecardscan.example.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- To store the heap dumps and leak analysis results. -->
+26-->[androidx.core:core:1.9.0] /Users/egarro/.gradle/caches/transforms-3/f96df033ecbce2648c70ccaafe69a5b0/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+26-->[androidx.core:core:1.9.0] /Users/egarro/.gradle/caches/transforms-3/f96df033ecbce2648c70ccaafe69a5b0/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+27    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+27-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:25:5-80
+27-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:25:22-77
+28    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- To allow posting notifications on Android 13 -->
+28-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:26:5-81
+28-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:26:22-78
+29    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+29-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:29:5-77
+29-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:29:22-74
+30
+31    <application
+31-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:7:5-43:19
+32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+32-->[androidx.core:core:1.9.0] /Users/egarro/.gradle/caches/transforms-3/f96df033ecbce2648c70ccaafe69a5b0/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+33        android:debuggable="true"
+34        android:icon="@mipmap/ic_launcher"
+34-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:8:9-43
+35        android:label="@string/app_name"
+35-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:9:9-41
+36        android:supportsRtl="true"
+36-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:10:9-35
+37        android:testOnly="true"
+38        android:theme="@style/AppTheme" >
+38-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:11:9-40
+39        <meta-data
+40            android:name="com.mademediacorp.mmastripecardscan.example.metadata.backend_url"
+40-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:15:13-92
+41            android:value="https://gradle" />
+41-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:16:13-43
+42        <meta-data
+43            android:name="com.mademediacorp.mmastripecardscan.example.metadata.publishable_key"
+43-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:18:13-96
+44            android:value="" />
+44-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:19:13-47
+45
+46        <activity
+46-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:21:9-30:20
+47            android:name="com.mademediacorp.mmastripecardscan.example.MainActivity"
+47-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:22:13-41
+48            android:exported="true"
+48-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:23:13-36
+49            android:theme="@style/AppTheme.NoActionBar" >
+49-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:24:13-56
+50            <intent-filter>
+50-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:25:13-29:29
+51                <action android:name="android.intent.action.MAIN" />
+51-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:26:17-69
+51-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:26:25-66
+52
+53                <category android:name="android.intent.category.LAUNCHER" />
+53-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:28:17-77
+53-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:28:27-74
+54            </intent-filter>
+55        </activity>
+56        <activity
+56-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:32:9-34:40
+57            android:name="com.mademediacorp.mmastripecardscan.example.CardImageVerificationDemoActivity"
+57-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:33:13-62
+58            android:exported="false" />
+58-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:34:13-37
+59        <activity
+59-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:36:9-38:40
+60            android:name="com.mademediacorp.mmastripecardscan.example.CardScanDemoActivity"
+60-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:37:13-49
+61            android:exported="false" />
+61-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:38:13-37
+62        <activity
+62-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:40:9-42:40
+63            android:name="com.mademediacorp.mmastripecardscan.example.CardScanFragmentDemoActivity"
+63-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:41:13-57
+64            android:exported="false" />
+64-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:42:13-37
+65        <activity
+65-->[:mmastripecardscan] /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:9-23:65
+66            android:name="com.mademediacorp.mmastripecardscan.cardimageverification.CardImageVerificationActivity"
+66-->[:mmastripecardscan] /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-115
+67            android:screenOrientation="nosensor"
+67-->[:mmastripecardscan] /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-49
+68            android:theme="@style/StripeCardScanDefaultTheme" />
+68-->[:mmastripecardscan] /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-62
+69        <activity
+69-->[:mmastripecardscan] /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:9-27:65
+70            android:name="com.mademediacorp.mmastripecardscan.cardscan.CardScanActivity"
+70-->[:mmastripecardscan] /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:13-89
+71            android:screenOrientation="nosensor"
+71-->[:mmastripecardscan] /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-49
+72            android:theme="@style/StripeCardScanDefaultTheme" />
+72-->[:mmastripecardscan] /Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-62
+73
+74        <service
+74-->[androidx.camera:camera-camera2:1.2.3] /Users/egarro/.gradle/caches/transforms-3/908342892a3e0d79bb795338a8a78c23/transformed/camera-camera2-1.2.3/AndroidManifest.xml:24:9-33:19
+75            android:name="androidx.camera.core.impl.MetadataHolderService"
+75-->[androidx.camera:camera-camera2:1.2.3] /Users/egarro/.gradle/caches/transforms-3/908342892a3e0d79bb795338a8a78c23/transformed/camera-camera2-1.2.3/AndroidManifest.xml:25:13-75
+76            android:enabled="false"
+76-->[androidx.camera:camera-camera2:1.2.3] /Users/egarro/.gradle/caches/transforms-3/908342892a3e0d79bb795338a8a78c23/transformed/camera-camera2-1.2.3/AndroidManifest.xml:26:13-36
+77            android:exported="false" >
+77-->[androidx.camera:camera-camera2:1.2.3] /Users/egarro/.gradle/caches/transforms-3/908342892a3e0d79bb795338a8a78c23/transformed/camera-camera2-1.2.3/AndroidManifest.xml:27:13-37
+78            <meta-data
+78-->[androidx.camera:camera-camera2:1.2.3] /Users/egarro/.gradle/caches/transforms-3/908342892a3e0d79bb795338a8a78c23/transformed/camera-camera2-1.2.3/AndroidManifest.xml:30:13-32:89
+79                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+79-->[androidx.camera:camera-camera2:1.2.3] /Users/egarro/.gradle/caches/transforms-3/908342892a3e0d79bb795338a8a78c23/transformed/camera-camera2-1.2.3/AndroidManifest.xml:31:17-103
+80                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+80-->[androidx.camera:camera-camera2:1.2.3] /Users/egarro/.gradle/caches/transforms-3/908342892a3e0d79bb795338a8a78c23/transformed/camera-camera2-1.2.3/AndroidManifest.xml:32:17-86
+81        </service>
+82
+83        <provider
+83-->[androidx.emoji2:emoji2:1.2.0] /Users/egarro/.gradle/caches/transforms-3/42017ac6145981573a5c8de00449de63/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+84            android:name="androidx.startup.InitializationProvider"
+84-->[androidx.emoji2:emoji2:1.2.0] /Users/egarro/.gradle/caches/transforms-3/42017ac6145981573a5c8de00449de63/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+85            android:authorities="com.mademediacorp.mmastripecardscan.example.androidx-startup"
+85-->[androidx.emoji2:emoji2:1.2.0] /Users/egarro/.gradle/caches/transforms-3/42017ac6145981573a5c8de00449de63/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+86            android:exported="false" >
+86-->[androidx.emoji2:emoji2:1.2.0] /Users/egarro/.gradle/caches/transforms-3/42017ac6145981573a5c8de00449de63/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+87            <meta-data
+87-->[androidx.emoji2:emoji2:1.2.0] /Users/egarro/.gradle/caches/transforms-3/42017ac6145981573a5c8de00449de63/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+88                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+88-->[androidx.emoji2:emoji2:1.2.0] /Users/egarro/.gradle/caches/transforms-3/42017ac6145981573a5c8de00449de63/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+89                android:value="androidx.startup" />
+89-->[androidx.emoji2:emoji2:1.2.0] /Users/egarro/.gradle/caches/transforms-3/42017ac6145981573a5c8de00449de63/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+90            <meta-data
+90-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/egarro/.gradle/caches/transforms-3/168ab8b163ed92dae26f80b5b10787a5/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+91                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+91-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/egarro/.gradle/caches/transforms-3/168ab8b163ed92dae26f80b5b10787a5/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+92                android:value="androidx.startup" />
+92-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/egarro/.gradle/caches/transforms-3/168ab8b163ed92dae26f80b5b10787a5/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+93            <meta-data
+93-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+94                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+94-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+95                android:value="androidx.startup" />
+95-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+96        </provider>
+97
+98        <uses-library
+98-->[androidx.window:window:1.0.0] /Users/egarro/.gradle/caches/transforms-3/7779acfb67c97ffd5b2249da12ff2705/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
+99            android:name="androidx.window.extensions"
+99-->[androidx.window:window:1.0.0] /Users/egarro/.gradle/caches/transforms-3/7779acfb67c97ffd5b2249da12ff2705/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
+100            android:required="false" />
+100-->[androidx.window:window:1.0.0] /Users/egarro/.gradle/caches/transforms-3/7779acfb67c97ffd5b2249da12ff2705/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
+101        <uses-library
+101-->[androidx.window:window:1.0.0] /Users/egarro/.gradle/caches/transforms-3/7779acfb67c97ffd5b2249da12ff2705/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
+102            android:name="androidx.window.sidecar"
+102-->[androidx.window:window:1.0.0] /Users/egarro/.gradle/caches/transforms-3/7779acfb67c97ffd5b2249da12ff2705/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
+103            android:required="false" />
+103-->[androidx.window:window:1.0.0] /Users/egarro/.gradle/caches/transforms-3/7779acfb67c97ffd5b2249da12ff2705/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
+104
+105        <provider
+105-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:32:9-40:20
+106            android:name="leakcanary.internal.LeakCanaryFileProvider"
+106-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:33:13-70
+107            android:authorities="com.squareup.leakcanary.fileprovider.com.mademediacorp.mmastripecardscan.example"
+107-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:34:13-88
+108            android:exported="false"
+108-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:35:13-37
+109            android:grantUriPermissions="true" >
+109-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:36:13-47
+110            <meta-data
+110-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:37:13-39:66
+111                android:name="android.support.FILE_PROVIDER_PATHS"
+111-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:38:17-67
+112                android:resource="@xml/leak_canary_file_paths" />
+112-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:39:17-63
+113        </provider>
+114
+115        <activity
+115-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:42:9-73:20
+116            android:name="leakcanary.internal.activity.LeakActivity"
+116-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:43:13-69
+117            android:exported="true"
+117-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:44:13-36
+118            android:icon="@mipmap/leak_canary_icon"
+118-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:45:13-52
+119            android:label="@string/leak_canary_display_activity_label"
+119-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:46:13-71
+120            android:taskAffinity="com.squareup.leakcanary.com.mademediacorp.mmastripecardscan.example"
+120-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:47:13-76
+121            android:theme="@style/leak_canary_LeakCanary.Base" >
+121-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:48:13-63
+122            <intent-filter android:label="@string/leak_canary_import_hprof_file" >
+122-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:49:13-72:29
+122-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:49:28-81
+123                <action android:name="android.intent.action.VIEW" />
+123-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:50:17-69
+123-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:50:25-66
+124
+125                <category android:name="android.intent.category.DEFAULT" />
+125-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:52:17-76
+125-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:52:27-73
+126                <category android:name="android.intent.category.BROWSABLE" />
+126-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:53:17-78
+126-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:53:27-75
+127
+128                <data android:scheme="file" />
+128-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:55:17-47
+128-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:55:23-44
+129                <data android:scheme="content" />
+129-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:55:17-47
+129-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:55:23-44
+130                <data android:mimeType="*/*" />
+130-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:55:17-47
+131                <data android:host="*" />
+131-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:55:17-47
+132                <data android:pathPattern=".*\\.hprof" />
+132-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:55:17-47
+133                <data android:pathPattern=".*\\..*\\.hprof" />
+133-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:55:17-47
+134                <data android:pathPattern=".*\\..*\\..*\\.hprof" />
+134-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:55:17-47
+135                <data android:pathPattern=".*\\..*\\..*\\..*\\.hprof" />
+135-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:55:17-47
+136                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\.hprof" />
+136-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:55:17-47
+137                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\.hprof" />
+137-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:55:17-47
+138                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\..*\\.hprof" />
+138-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:55:17-47
+139                <!--
+140            Since hprof isn't a standard MIME type, we have to declare such patterns.
+141            Most file providers will generate URIs including their own package name,
+142            which contains `.` characters that must be explicitly escaped in pathPattern.
+143            @see https://stackoverflow.com/a/31028507/703646
+144                -->
+145            </intent-filter>
+146        </activity>
+147
+148        <activity-alias
+148-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:75:9-92:26
+149            android:name="leakcanary.internal.activity.LeakLauncherActivity"
+149-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:76:13-77
+150            android:banner="@drawable/leak_canary_tv_icon"
+150-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:77:13-59
+151            android:enabled="@bool/leak_canary_add_launcher_icon"
+151-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:78:13-66
+152            android:exported="true"
+152-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:79:13-36
+153            android:icon="@mipmap/leak_canary_icon"
+153-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:80:13-52
+154            android:label="@string/leak_canary_display_activity_label"
+154-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:81:13-71
+155            android:targetActivity="leakcanary.internal.activity.LeakActivity"
+155-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:82:13-79
+156            android:taskAffinity="com.squareup.leakcanary.com.mademediacorp.mmastripecardscan.example"
+156-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:83:13-76
+157            android:theme="@style/leak_canary_LeakCanary.Base" >
+157-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:84:13-63
+158            <intent-filter>
+158-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:85:13-91:29
+159                <action android:name="android.intent.action.MAIN" />
+159-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:26:17-69
+159-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:26:25-66
+160
+161                <category android:name="android.intent.category.LAUNCHER" />
+161-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:28:17-77
+161-->/Users/egarro/github.com/mademediacorp/MMAStripeCardScan/mmastripecardscan-example/src/main/AndroidManifest.xml:28:27-74
+162                <!-- Android TV launcher intent -->
+163                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+163-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:90:17-86
+163-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:90:27-83
+164            </intent-filter>
+165        </activity-alias>
+166
+167        <activity
+167-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:94:9-100:68
+168            android:name="leakcanary.internal.RequestPermissionActivity"
+168-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:95:13-73
+169            android:excludeFromRecents="true"
+169-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:96:13-46
+170            android:icon="@mipmap/leak_canary_icon"
+170-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:97:13-52
+171            android:label="@string/leak_canary_storage_permission_activity_label"
+171-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:98:13-82
+172            android:taskAffinity="com.squareup.leakcanary.com.mademediacorp.mmastripecardscan.example"
+172-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:99:13-76
+173            android:theme="@style/leak_canary_Theme.Transparent" />
+173-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:100:13-65
+174
+175        <receiver android:name="leakcanary.internal.NotificationReceiver" />
+175-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:102:9-77
+175-->[com.squareup.leakcanary:leakcanary-android-core:2.11] /Users/egarro/.gradle/caches/transforms-3/d7031c2f8650ee1d7db7e29d193cdb69/transformed/leakcanary-android-core-2.11/AndroidManifest.xml:102:19-74
+176        <receiver
+176-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+177            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+177-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+178            android:directBootAware="false"
+178-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+179            android:enabled="true"
+179-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+180            android:exported="true"
+180-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+181            android:permission="android.permission.DUMP" >
+181-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+182            <intent-filter>
+182-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+183                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+183-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+183-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+184            </intent-filter>
+185            <intent-filter>
+185-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+186                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+186-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+186-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+187            </intent-filter>
+188            <intent-filter>
+188-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+189                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+189-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+189-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+190            </intent-filter>
+191            <intent-filter>
+191-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+192                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+192-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+192-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/egarro/.gradle/caches/transforms-3/124a7fcb9b1ee0132780b06c49587996/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+193            </intent-filter>
+194        </receiver>
+195
+196        <provider
+196-->[com.squareup.leakcanary:leakcanary-object-watcher-android:2.11] /Users/egarro/.gradle/caches/transforms-3/5d3eddd7671004cff1a6fa5967bb2140/transformed/leakcanary-object-watcher-android-2.11/AndroidManifest.xml:8:9-12:40
+197            android:name="leakcanary.internal.MainProcessAppWatcherInstaller"
+197-->[com.squareup.leakcanary:leakcanary-object-watcher-android:2.11] /Users/egarro/.gradle/caches/transforms-3/5d3eddd7671004cff1a6fa5967bb2140/transformed/leakcanary-object-watcher-android-2.11/AndroidManifest.xml:9:13-78
+198            android:authorities="com.mademediacorp.mmastripecardscan.example.leakcanary-installer"
+198-->[com.squareup.leakcanary:leakcanary-object-watcher-android:2.11] /Users/egarro/.gradle/caches/transforms-3/5d3eddd7671004cff1a6fa5967bb2140/transformed/leakcanary-object-watcher-android-2.11/AndroidManifest.xml:10:13-72
+199            android:enabled="@bool/leak_canary_watcher_auto_install"
+199-->[com.squareup.leakcanary:leakcanary-object-watcher-android:2.11] /Users/egarro/.gradle/caches/transforms-3/5d3eddd7671004cff1a6fa5967bb2140/transformed/leakcanary-object-watcher-android-2.11/AndroidManifest.xml:11:13-69
+200            android:exported="false" />
+200-->[com.squareup.leakcanary:leakcanary-object-watcher-android:2.11] /Users/egarro/.gradle/caches/transforms-3/5d3eddd7671004cff1a6fa5967bb2140/transformed/leakcanary-object-watcher-android-2.11/AndroidManifest.xml:12:13-37
+201        <provider
+201-->[com.squareup.leakcanary:plumber-android:2.11] /Users/egarro/.gradle/caches/transforms-3/2d5677c2aa24815ecde7ea8856be8d9c/transformed/plumber-android-2.11/AndroidManifest.xml:8:9-12:40
+202            android:name="leakcanary.internal.PlumberInstaller"
+202-->[com.squareup.leakcanary:plumber-android:2.11] /Users/egarro/.gradle/caches/transforms-3/2d5677c2aa24815ecde7ea8856be8d9c/transformed/plumber-android-2.11/AndroidManifest.xml:9:13-64
+203            android:authorities="com.mademediacorp.mmastripecardscan.example.plumber-installer"
+203-->[com.squareup.leakcanary:plumber-android:2.11] /Users/egarro/.gradle/caches/transforms-3/2d5677c2aa24815ecde7ea8856be8d9c/transformed/plumber-android-2.11/AndroidManifest.xml:10:13-69
+204            android:enabled="@bool/leak_canary_plumber_auto_install"
+204-->[com.squareup.leakcanary:plumber-android:2.11] /Users/egarro/.gradle/caches/transforms-3/2d5677c2aa24815ecde7ea8856be8d9c/transformed/plumber-android-2.11/AndroidManifest.xml:11:13-69
+205            android:exported="false" />
+205-->[com.squareup.leakcanary:plumber-android:2.11] /Users/egarro/.gradle/caches/transforms-3/2d5677c2aa24815ecde7ea8856be8d9c/transformed/plumber-android-2.11/AndroidManifest.xml:12:13-37
+206    </application>
+207
+208</manifest>

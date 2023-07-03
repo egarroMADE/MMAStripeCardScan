@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-mergeDebugResources-59:/values-h550dp-port-v13/values-h550dp-port-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/egarro/.gradle/caches/transforms-3/e72f01b5cdabded6d493c33e9e08db9d/transformed/material-1.8.0/res/values-h550dp-port-v13/values-h550dp-port-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "76",
+                        "endOffsets": "127"
+                    }
+                }
+            ]
+        }
+    ]
+}

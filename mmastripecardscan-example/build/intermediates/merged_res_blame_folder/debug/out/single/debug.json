@@ -1,0 +1,62 @@
+[
+    {
+        "merged": "com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-merged_res-61:/layout_activity_card_scan_demo.xml.flat",
+        "source": "com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-main-63:/layout/activity_card_scan_demo.xml"
+    },
+    {
+        "merged": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-merged_res-61:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-main-63:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-merged_res-61:/drawable_ic_settings.xml.flat",
+        "source": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-main-63:/drawable/ic_settings.xml"
+    },
+    {
+        "merged": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-merged_res-61:/drawable_ic_refresh.xml.flat",
+        "source": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-main-63:/drawable/ic_refresh.xml"
+    },
+    {
+        "merged": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-merged_res-61:/layout_activity_card_image_verification_demo.xml.flat",
+        "source": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-main-63:/layout/activity_card_image_verification_demo.xml"
+    },
+    {
+        "merged": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-merged_res-61:/layout_activity_card_scan_fragment_demo.xml.flat",
+        "source": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-main-63:/layout/activity_card_scan_fragment_demo.xml"
+    },
+    {
+        "merged": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-merged_res-61:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-main-63:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-merged_res-61:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-main-63:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-merged_res-61:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-pngs-57:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-merged_res-61:/layout_activity_main.xml.flat",
+        "source": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-main-63:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-merged_res-61:/layout_activity_card_scan_demo.xml.flat",
+        "source": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-main-63:/layout/activity_card_scan_demo.xml"
+    },
+    {
+        "merged": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-merged_res-61:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-main-63:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-merged_res-61:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-main-63:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-merged_res-61:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-main-63:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-merged_res-61:/mipmap-ldpi_ic_launcher.png.flat",
+        "source": "/Users/egarro/.gradle/daemon/8.0/com.mademediacorp.mmastripecardscan.example.mmastripecardscan-example-main-63:/mipmap-ldpi/ic_launcher.png"
+    }
+]

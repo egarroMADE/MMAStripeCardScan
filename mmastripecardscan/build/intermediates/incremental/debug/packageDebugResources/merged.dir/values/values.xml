@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr format="color" name="stripeCardExpiryColor"/>
+    <attr format="color" name="stripeCardPanColor"/>
+    <attr format="color" name="stripeCorrectBackgroundColor"/>
+    <attr format="color" name="stripeCorrectOutlineColor"/>
+    <attr format="dimension" name="stripeCorrectOutlineWidth"/>
+    <attr format="color" name="stripeFoundBackgroundColor"/>
+    <attr format="color" name="stripeFoundOutlineColor"/>
+    <attr format="dimension" name="stripeFoundOutlineWidth"/>
+    <attr format="color" name="stripeNotFoundBackgroundColor"/>
+    <attr format="color" name="stripeNotFoundOutlineColor"/>
+    <attr format="dimension" name="stripeNotFoundOutlineWidth"/>
+    <attr format="color" name="stripeWrongBackgroundColor"/>
+    <attr format="color" name="stripeWrongOutlineColor"/>
+    <attr format="dimension" name="stripeWrongOutlineWidth"/>
+    <color name="stripeButtonDark">@android:color/white</color>
+    <color name="stripeButtonDarkText">@android:color/black</color>
+    <color name="stripeButtonLight">@android:color/black</color>
+    <color name="stripeButtonLightText">@android:color/white</color>
+    <color description="The color of the swap camera button when the background is a dark color" name="stripeCameraSwapButtonDarkColor">#FFFFFF</color>
+    <color description="The color of the swap camera button when the background is a light color" name="stripeCameraSwapButtonLightColor">#000000</color>
+    <color description="The color of the Enter Card Manually text displayed at the bottom of the screen when the background is a dark color" name="stripeCannotScanCardColorDark">@android:color/white</color>
+    <color description="The color of the Enter Card Manually text displayed at the bottom of the screen when the background is a light color" name="stripeCannotScanCardColorLight">@android:color/black</color>
+    <color name="stripeCardDescriptionColorDark">@android:color/white</color>
+    <color name="stripeCardDescriptionColorLight">@android:color/black</color>
+    <color description="The text color of the card expiry displayed over the scan window" name="stripeCardExpiryColor">@android:color/white</color>
+    <color description="The outline color of the card expiry displayed over the scan window" name="stripeCardExpiryOutlineColor">@android:color/black</color>
+    <color description="The text color of the cardholder name displayed over the scan window" name="stripeCardNameColor">@android:color/white</color>
+    <color description="The outline color of the cardholder name displayed over the scan window" name="stripeCardNameOutlineColor">@android:color/black</color>
+    <color description="The text color of the card number displayed over the scan window" name="stripeCardPanColor">@android:color/white</color>
+    <color description="The outline color of the card number displayed over the scan window" name="stripeCardPanOutlineColor">@android:color/black</color>
+    <color description="The color of the close button when the background is a dark color" name="stripeCloseButtonDarkColor">#FFFFFF</color>
+    <color description="The color of the close button when the background is a light color" name="stripeCloseButtonLightColor">#000000</color>
+    <color description="The background color of the scan window when a card has been found and the scan is completed" name="stripeCorrectBackground">#DD222222</color>
+    <color description="The outline color of the scan window when the scan has completed" name="stripeCorrectOutline">#2ED573</color>
+    <color description="When using debug mode, the color of boxes to draw around high confidence text" name="stripeDebugHighConfidence">#00FF00</color>
+    <color description="When using debug mode, the color of boxes to draw around low confidence text" name="stripeDebugLowConfidence">#FF0000</color>
+    <color description="When using debug mode, the color of boxes to draw around medium confidence text" name="stripeDebugMediumConfidence">#DDDD00</color>
+    <color description="The background color of the scan window when instructions are displayed over top" name="stripeDisplayInstructionsBackground">#DD222222</color>
+    <color description="The color of the torch button when the background is a dark color" name="stripeFlashButtonDarkColor">#FFFFFF</color>
+    <color description="The color of the torch button when the background is a light color" name="stripeFlashButtonLightColor">#000000</color>
+    <color description="The background color of the scan window when a card has been found and the scan is started" name="stripeFoundBackground">#DD222222</color>
+    <color description="The outline color of the scan window when a card has been found and the scan is started" name="stripeFoundOutline">#1E90FF</color>
+    <color description="The color of the instructions text above the scan window when the background is a dark color" name="stripeInstructionsColorDark">@android:color/white</color>
+    <color description="The color of the instructions text above the scan window when the background is a light color" name="stripeInstructionsColorLight">@android:color/black</color>
+    <color description="The background color of the scan window when no card is visible" name="stripeNotFoundBackground">#DD222222</color>
+    <color description="The outline color of the scan window when no card is visible" name="stripeNotFoundOutline">#FFFFFF</color>
+    <color description="The color of the privacy text below the scan window when the background is a dark color" name="stripePrivacyLinkColorDark">#D3D3D3</color>
+    <color description="The color of the privacy text below the scan window when the background is a light color" name="stripePrivacyLinkColorLight">@android:color/darker_gray</color>
+    <color name="stripeProcessingBackground">#AA000000</color>
+    <color name="stripeProcessingText">@android:color/white</color>
+    <color description="The color of the security notification shown below the scan window when the background is a dark color" name="stripeSecurityColorDark">@android:color/white</color>
+    <color description="The color of the security notification shown below the scan window when the background is a light color" name="stripeSecurityColorLight">@android:color/black</color>
+    <color description="The background color of the scan window when a card has been found that does not match the required card" name="stripeWrongBackground">#DD222222</color>
+    <color description="The outline color of the scan window when a card has been found that does not match the required card" name="stripeWrongOutline">#FF2222</color>
+    <dimen name="stripeButtonCornerRadius">1000dp</dimen>
+    <dimen name="stripeButtonMargin">24dp</dimen>
+    <dimen name="stripeButtonPadding">12dp</dimen>
+    <dimen description="The size of the Cannot Scan text at the bottom of the screen" name="stripeCannotScanCardTextSize">18sp</dimen>
+    <dimen name="stripeCardDescriptionMargin">16dp</dimen>
+    <dimen name="stripeCardDescriptionTextSize">16sp</dimen>
+    <dimen description="The minimum vertical and horizontal distance between the card details (number, expiry, name) and the border of the view finder window" name="stripeCardDetailsMargin">12dp</dimen>
+    <item description="The size of the outline of the expiry text displayed in the middle of the view finder window" format="float" name="stripeExpiryStrokeSize" type="dimen">2.5</item>
+    <dimen description="The size of the expiry text displayed in the middle of the view finder window" name="stripeExpiryTextSize">16sp</dimen>
+    <dimen description="The minimum amount of space surrounding the instructions text above the view finder window" name="stripeInstructionsMargin">16dp</dimen>
+    <dimen description="The size of the instructions text above the view finder window" name="stripeInstructionsTextSize">22sp</dimen>
+    <dimen description="The minimum amount of space surrounding the logo" name="stripeLogoMargin">16dp</dimen>
+    <dimen name="stripeMissingCardTextSize">18sp</dimen>
+    <item description="The size of the outline of the cardholder name text displayed in the middle of the view finder window" format="float" name="stripeNameStrokeSize" type="dimen">2.5</item>
+    <dimen description="The size of the cardholder name text displayed in the middle of the view finder window" name="stripeNameTextSize">16sp</dimen>
+    <item description="The size of the outline of the card number text displayed in the middle of the view finder window" format="float" name="stripePanStrokeSize" type="dimen">2.5</item>
+    <dimen description="The size of the card number text displayed in the middle of the view finder window" name="stripePanTextSize">20sp</dimen>
+    <dimen description="The size of the privacy link text below the view finder window" name="stripePrivacyLinkTextSize">14sp</dimen>
+    <dimen name="stripeProcessingTextSize">24sp</dimen>
+    <dimen description="The distance between the security notification lock icon and the security notification text" name="stripeSecurityIconMargin">4dp</dimen>
+    <dimen description="The minimum amount of space surrounding the security notification text below the view finder window" name="stripeSecurityMargin">16dp</dimen>
+    <dimen description="The size of the security text below the view finder window" name="stripeSecurityTextSize">14sp</dimen>
+    <item description="The width of the border around the view finder window when the scan completes" name="stripeCorrectOutlineWidth" type="integer">10</item>
+    <item description="The width of the border around the view finder window when a card has been found and the scan has started" name="stripeFoundOutlineWidth" type="integer">5</item>
+    <item description="The width of the lines of the close and torch buttons" name="stripeIconStrokeWidth" type="integer">2</item>
+    <item description="The width of the border around the view finder window when no card is present" name="stripeNotFoundOutlineWidth" type="integer">1</item>
+    <item description="The width of the border around the view finder window in paymentsheet when no card is present" name="stripePaymentSheetNotFoundOutlineWidth" type="integer">2</item>
+    <item description="The width of the border around the view finder window when a card has been found but does not match the required card" name="stripeWrongOutlineWidth" type="integer">10</item>
+    <string description="Negative button shown as part of the permission denied dialog" name="stripe_camera_permission_denied_cancel">Cancel</string>
+    <string description="Message shown to the user when camera permission is denied" name="stripe_camera_permission_denied_message">Please allow camera access to scan your card</string>
+    <string description="Affirmative button shown as part of the permission denied dialog" name="stripe_camera_permission_denied_ok">OK</string>
+    <string description="Message shown to the user when camera permission is denied in fragment" name="stripe_camera_permission_settings_message">Please allow camera access in settings to scan your card</string>
+    <string name="stripe_cannot_scan_card">I can\'t scan this card</string>
+    <string name="stripe_card_description">%1$s \u2022\u2022\u2022\u2022 %2$s</string>
+    <string description="Text displayed above the scan window, instructing the user how to scan card" name="stripe_card_scan_instructions">Scan Your Card</string>
+    <string description="Privacy link text in scan window. THIS STRING SHOULD NOT BE MODIFIED" name="stripe_card_scan_privacy_link_text"><![CDATA[We use Stripe to verify your card details. Stripe may use and store your data according its privacy policy. <a href="https://support.stripe.com/questions/stripes-card-image-verification"><u>Learn more</u></a>]]></string>
+    <string description="Security notification displayed below the scan window" name="stripe_card_scan_security">Your card info is secure</string>
+    <string description="Text displayed above the scan window for paymentsheet, instructing the user how to scan card" name="stripe_card_scan_title">Position your card in the rectangle to scan</string>
+    <string description="Accessibility description of the view finder window" name="stripe_card_view_finder_description">card view finder</string>
+    <string description="Text used to close the scan window" name="stripe_close_button_description">Close</string>
+    <string description="Accessibility description of the debug preview window" name="stripe_debug_description">card debug window</string>
+    <string description="Accessibility description of the Stripe logo" name="stripe_logo">Stripe logo</string>
+    <string description="Accessibility description of the camera preview window" name="stripe_preview_description">card scanning window</string>
+    <string name="stripe_processing_card">Processing, please wait</string>
+    <string description="Text displayed above the scan window when the wrong card is scanned" name="stripe_scanned_wrong_card">Card doesn\'t match</string>
+    <string description="Accessibility description of the security notification lock icon" name="stripe_security_description">lock icon</string>
+    <string description="Text used to swap the camera" name="stripe_swap_camera_button_description">Swap Camera</string>
+    <string description="Text used to turn on the camera torch" name="stripe_torch_button_description">Torch</string>
+    <style name="StripeCardScanBaseTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="StripeCardScanDefaultTheme" parent="StripeCardScanBaseTheme">
+        <item name="background">@color/stripeNotFoundBackground</item>
+
+        <item name="stripeNotFoundBackgroundColor">@color/stripeNotFoundBackground</item>
+        <item name="stripeNotFoundOutlineColor">@color/stripeNotFoundOutline</item>
+        <item name="stripeNotFoundOutlineWidth">@integer/stripeNotFoundOutlineWidth</item>
+
+        <item name="stripeFoundBackgroundColor">@color/stripeFoundBackground</item>
+        <item name="stripeFoundOutlineColor">@color/stripeFoundOutline</item>
+        <item name="stripeFoundOutlineWidth">@integer/stripeFoundOutlineWidth</item>
+
+        <item name="stripeWrongBackgroundColor">@color/stripeWrongBackground</item>
+        <item name="stripeWrongOutlineColor">@color/stripeWrongOutline</item>
+        <item name="stripeWrongOutlineWidth">@integer/stripeWrongOutlineWidth</item>
+
+        <item name="stripeCorrectBackgroundColor">@color/stripeCorrectBackground</item>
+        <item name="stripeCorrectOutlineColor">@color/stripeCorrectOutline</item>
+        <item name="stripeCorrectOutlineWidth">@integer/stripeCorrectOutlineWidth</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+</resources>

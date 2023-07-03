@@ -1,0 +1,71 @@
+apply from: configs.androidLibrary
+
+apply plugin: 'kotlin-kapt'
+apply plugin: "org.jetbrains.kotlin.plugin.parcelize"
+apply plugin: 'org.jetbrains.kotlin.plugin.serialization'
+
+task wrapper(type: Wrapper){
+    gradleVersion = '8.1.1'
+}
+
+tasks.register("prepareKotlinBuildScriptModel"){}
+
+dependencies {
+    implementation libs.androidx.appCompat
+    implementation libs.androidx.constraintLayout
+    implementation libs.androidx.coreKtx
+    implementation libs.androidx.fragment
+    implementation libs.kotlin.coroutines
+    implementation libs.kotlin.coroutinesAndroid
+    implementation libs.kotlin.serialization
+    implementation 'com.stripe:camera-core:20.25.8'
+    implementation 'com.stripe:ml-core-cardscan:20.25.8'
+    implementation 'com.stripe:stripe-core:20.25.8'
+
+    testImplementation testLibs.androidx.core
+    testImplementation testLibs.androidx.testRunner
+    testImplementation testLibs.junit
+    testImplementation testLibs.kotlin.coroutines
+    testImplementation testLibs.kotlin.test
+    testImplementation testLibs.mockito.inline
+    testImplementation testLibs.mockito.kotlin
+    testImplementation testLibs.robolectric
+    testImplementation testLibs.truth
+
+    androidTestImplementation testLibs.androidx.coreKtx
+    androidTestImplementation testLibs.androidx.testRules
+    androidTestImplementation testLibs.androidx.testRunner
+    androidTestImplementation testLibs.kotlin.coroutines
+    androidTestImplementation testLibs.kotlin.test
+    androidTestUtil testLibs.testOrchestrator
+}
+
+android {
+    buildFeatures {
+        viewBinding true
+    }
+
+    testOptions {
+        unitTests {
+            // Note: without this, all Robolectric tests using assets will fail.
+            includeAndroidResources = true
+            all {
+                maxHeapSize = "1024m"
+            }
+        }
+    }
+
+    packagingOptions {
+        resources {
+            pickFirsts += ['META-INF/AL2.0', 'META-INF/LGPL2.1']
+        }
+    }
+}
+
+ext {
+    artifactId = "mmastripecardscan"
+    artifactName = "mmastripecardscan"
+    artifactDescrption = "The mmastripecardscan is a fork from Stripe's stripecardscan Payment Android SDK"
+}
+
+apply from: "${rootDir}/deploy/deploy.gradle"
