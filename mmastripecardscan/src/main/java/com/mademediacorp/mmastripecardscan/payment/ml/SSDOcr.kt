@@ -3,6 +3,8 @@ package com.mademediacorp.mmastripecardscan.payment.ml
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Rect
+import android.os.Environment
+import android.util.Log
 import android.util.Size
 import androidx.annotation.VisibleForTesting
 import com.mademediacorp.mmastripecardscan.camera.framework.image.cropCameraPreviewToViewFinder
@@ -20,12 +22,16 @@ import com.mademediacorp.mmastripecardscan.framework.ml.ssd.softMax
 import com.mademediacorp.mmastripecardscan.framework.ml.ssd.toRectForm
 import com.mademediacorp.mmastripecardscan.framework.util.reshape
 import com.mademediacorp.mmastripecardscan.payment.card.isValidPan
+import com.mademediacorp.mmastripecardscan.payment.card.isValidDNI
 import com.mademediacorp.mmastripecardscan.payment.ml.ssd.OcrFeatureMapSizes
 import com.mademediacorp.mmastripecardscan.payment.ml.ssd.combinePriors
 import com.mademediacorp.mmastripecardscan.payment.ml.ssd.determineLayoutAndFilter
 import com.mademediacorp.mmastripecardscan.payment.ml.ssd.extractPredictions
 import com.mademediacorp.mmastripecardscan.payment.ml.ssd.rearrangeOCRArray
 import java.nio.ByteBuffer
+import com.mademediacorp.mmastripecardscan.framework.image.toBitmap
+import java.io.File
+import java.io.FileOutputStream
 
 /** Training images are normalized with mean 127.5 and std 128.5. */
 private const val IMAGE_MEAN = 127.5f
@@ -86,7 +92,7 @@ private val FEATURE_MAP_SIZES =
  * This value should never change, and is thread safe.
  */
 private val PRIORS = combinePriors(SSDOcr.Factory.TRAINED_IMAGE_SIZE)
-
+private val mlKitRecognizer = MLKitTextRecognizer()
 /**
  * This model performs SSD OCR recognition on a card.
  */
@@ -98,15 +104,19 @@ internal class SSDOcr private constructor(interpreter: InterpreterWrapper) :
         Map<Int, Array<FloatArray>>
         >(interpreter) {
 
+            var context: Context? = interpreter.context
+
     data class Input(val ssdOcrImage: MLImage)
 
-    data class Prediction(val pan: String?) {
-
-        /**
-         * Force a generic toString method to prevent leaking information about this class'
-         * parameters after R8. Without this method, this `data class` will automatically generate a
-         * toString which retains the original names of the parameters even after obfuscation.
-         */
+    data class Prediction(
+        val pan: String?,
+        val dni: String?,
+        val recognitionMethod: RecognitionMethod = RecognitionMethod.TENSORFLOW
+    ) {
+        enum class RecognitionMethod {
+            TENSORFLOW,  // Original digit-only TensorFlow model
+            ML_KIT      // Google ML Kit for alphanumeric text
+        }
         override fun toString(): String {
             return "Prediction"
         }
@@ -125,6 +135,17 @@ internal class SSDOcr private constructor(interpreter: InterpreterWrapper) :
                 .scale(Factory.TRAINED_IMAGE_SIZE)
                 .toMLImage(mean = IMAGE_MEAN, std = IMAGE_STD)
         )
+        /**
+         * Store the cropped bitmap for ML Kit processing
+         */
+        fun cameraPreviewToBitmap(
+            cameraPreviewImage: Bitmap,
+            previewBounds: Rect,
+            cardFinder: Rect
+        ): Bitmap {
+            return cropCameraPreviewToViewFinder(cameraPreviewImage, previewBounds, cardFinder)
+                .scale(Factory.TRAINED_IMAGE_SIZE)
+        }
     }
 
     override suspend fun transformData(data: Input): Array<ByteBuffer> =
@@ -171,10 +192,94 @@ internal class SSDOcr private constructor(interpreter: InterpreterWrapper) :
         )
 
         val predictedNumber = detectedBoxes.map { it.label }.joinToString("")
-        return if (isValidPan(predictedNumber)) {
-            Prediction(predictedNumber)
+        if (isValidPan(predictedNumber)) {
+            return Prediction(predictedNumber, null, Prediction.RecognitionMethod.TENSORFLOW)
+        }
+
+        return tryMLKitRecognition(data, this.context)
+    }
+
+    /**
+     * Use ML Kit Text Recognition for DNI scanning
+     */
+    private suspend fun tryMLKitRecognition(data: Input, context: Context?): Prediction {
+        return try {
+            Log.d("DNI", "=== Starting ML Kit Recognition ===")
+            val mlImage = data.ssdOcrImage  //600X375
+            val bitmap = mlImage.toBitmap()
+
+//            // When debugging, you may want to save bitmap to disk for inspection
+//            try {
+//                saveBitmapToFile(bitmap, "debug_bitmap_${System.currentTimeMillis()}.png", context)
+//            } catch (e: Exception) {
+//                Log.e("DNI_DEBUG", "Failed to save bitmap: ${e.message}")
+//            }
+
+            if (bitmap == null) {
+                return Prediction(null, null, Prediction.RecognitionMethod.ML_KIT)
+            }
+            val textResult = mlKitRecognizer.recognizeText(bitmap)
+            if (textResult.fullText.isBlank() && textResult.lines.isEmpty()) {
+                return Prediction(null, null, Prediction.RecognitionMethod.ML_KIT)
+            }
+            val processedDNIText = processDNIText(textResult)
+            if (isValidDNI(processedDNIText)) {
+                Log.d("DNI", "FOUND DNI with ML Kit!")
+                Prediction(null, processedDNIText, Prediction.RecognitionMethod.ML_KIT)
+            } else {
+                Prediction(null, null, Prediction.RecognitionMethod.ML_KIT)
+            }
+        } catch (e: Exception) {
+            Prediction(null, null, Prediction.RecognitionMethod.ML_KIT)
+        }
+    }
+
+    /**
+     * Save bitmap to external files directory for debugging
+     */
+    private fun saveBitmapToFile(bitmap: Bitmap, filename: String, context: Context?) {
+        if (context != null) {
+            Log.d("DNI", "=== saveBitmapToFile ===")
+            try {
+                // Use external files directory (doesn't require permissions)
+//                val file = File(context.getExternalFilesDir(Environment.DIRECTORY_PICTURES), filename)
+                val file = File("/storage/emulated/0/Android/media/com.mademediacorp.examplevue/examplevue/examplevue Images", filename)
+                file.parentFile?.mkdirs()
+
+                FileOutputStream(file).use { out ->
+                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, out)
+                    out.flush()
+                }
+
+                Log.d("DNI_DEBUG", "✅ Bitmap saved to: ${file.absolutePath}")
+                Log.d("DNI_DEBUG", "File size: ${file.length()} bytes")
+                // Also log the path so you can easily find it
+                Log.i("BITMAP_SAVE", "Saved bitmap: ${file.absolutePath}")
+            } catch (e: Exception) {
+                Log.e("DNI_DEBUG", "Failed to save bitmap to file: ${e.message}", e)
+            }
         } else {
-            Prediction(null)
+            Log.d("DNI_DEBUG", "❌ No context available to save bitmap")
+        }
+    }
+
+    /**
+     * Process ML Kit recognized text for DNI format
+     * DNI typically has 3 lines with ~30 characters each
+     */
+    private fun processDNIText(textResult: RecognizedTextResult): String {
+        // Filter lines that look like DNI format
+        val dniLines = textResult.lines.map { line ->
+            line.replace(" ", "").replace("«", "<").uppercase()
+        }.filter { line ->
+            line.length >= 20 && line.length <= 40 && line.matches(Regex(".*[A-Z0-9<].*"))
+        }.takeLast(3)
+
+        return if (dniLines.size == 3) {
+            dniLines.joinToString("")
+        } else {
+
+            textResult.fullText.replace(" ", "").replace("«", "<").take(90) // DNI is ~90 chars
         }
     }
 
@@ -190,6 +295,11 @@ internal class SSDOcr private constructor(interpreter: InterpreterWrapper) :
         @Suppress("UNCHECKED_CAST")
         tfInterpreter.runForMultipleInputsOutputs(data as Array<Any>, mlOutput)
         return mlOutput
+    }
+
+    // Add cleanup method
+    fun cleanup() {
+        mlKitRecognizer.shutdown()
     }
 
     /**
@@ -212,6 +322,8 @@ internal class SSDOcr private constructor(interpreter: InterpreterWrapper) :
             .numThreads(threads)
             .build()
 
-        override suspend fun newInstance(): SSDOcr? = createInterpreter()?.let { SSDOcr(it) }
+        override suspend fun newInstance(): SSDOcr? {
+            return createInterpreter(this.context)?.let { SSDOcr(it) }
+        }
     }
 }

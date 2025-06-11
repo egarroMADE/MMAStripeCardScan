@@ -54,7 +54,7 @@ internal abstract class TFLAnalyzerFactory<
     Output,
     AnalyzerType : Analyzer<Input, Any, Output>
     >(
-    private val context: Context,
+    val context: Context,
     private val fetchedModel: FetchedData
 ) : AnalyzerFactory<Input, Any, Output, AnalyzerType> {
     protected abstract val tfOptions: InterpreterOptionsWrapper
@@ -65,11 +65,13 @@ internal abstract class TFLAnalyzerFactory<
 
     private var loadedModel: ByteBuffer? = null
 
-//    protected suspend fun createInterpreter(): Interpreter? =
-//        createInterpreter(fetchedModel)
-
-    protected suspend fun createInterpreter(): InterpreterWrapper? =
-        createInterpreter(fetchedModel)
+    protected suspend fun createInterpreter(context: Context): InterpreterWrapper? {
+        val resp = createInterpreter(fetchedModel)
+        if (resp != null) {
+            resp.context = context
+        }
+        return resp
+    }
 
     private suspend fun createInterpreter(fetchedModel: FetchedData): InterpreterWrapper? = try {
 
@@ -89,9 +91,6 @@ internal abstract class TFLAnalyzerFactory<
             )
         }
     }
-
-//    private suspend fun loadModel(fetchedModel: FetchedData): ByteBuffer? =
-//        loadModelMutex.withLock { loadedModel ?: run { loader.loadData(fetchedModel) } }
 
     private suspend fun loadModel(fetchedModel: FetchedData): File? =
         loadModelMutex.withLock {

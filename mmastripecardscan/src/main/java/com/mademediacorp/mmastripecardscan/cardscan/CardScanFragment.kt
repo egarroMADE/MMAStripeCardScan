@@ -93,7 +93,8 @@ class CardScanFragment : ScanFragment(), SimpleScanStateful<CardScanState> {
                     bundleOf(
                         CARD_SCAN_FRAGMENT_BUNDLE_KEY to CardScanSheetResult.Completed(
                             ScannedCard(
-                                pan = card.pan
+                                value = card.value,
+                                recognitionMethod = card.recognitionMethod
                             )
                         )
                     )
@@ -137,7 +138,7 @@ class CardScanFragment : ScanFragment(), SimpleScanStateful<CardScanState> {
                 launch(Dispatchers.Main) {
                     changeScanState(CardScanState.Correct)
                     activity?.let { cameraAdapter.unbindFromLifecycle(it) }
-                    resultListener.cardScanComplete(ScannedCard(result.pan))
+                    resultListener.cardScanComplete(ScannedCard(result.value, result.method.toString()))
                     closeScanner()
                 }.let { }
             }

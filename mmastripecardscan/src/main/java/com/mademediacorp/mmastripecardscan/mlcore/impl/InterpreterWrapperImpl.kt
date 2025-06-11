@@ -1,5 +1,6 @@
 package com.mademediacorp.mmastripecardscan.mlcore.impl
 
+import android.content.Context
 import androidx.annotation.RestrictTo
 import com.mademediacorp.mmastripecardscan.mlcore.base.InterpreterOptionsWrapper
 import com.mademediacorp.mmastripecardscan.mlcore.base.InterpreterWrapper
@@ -9,6 +10,7 @@ import java.nio.ByteBuffer
 
 @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
 class InterpreterWrapperImpl : InterpreterWrapper {
+    override var context: Context? = null
     private val interpreter: Interpreter
 
     constructor(byteBuffer: ByteBuffer, options: InterpreterOptionsWrapper) {

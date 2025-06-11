@@ -3,8 +3,10 @@ package com.mademediacorp.mmastripecardscan.camera
 import android.Manifest
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Bundle
 import android.provider.Settings
 import androidx.annotation.RestrictTo
 import androidx.appcompat.app.AlertDialog
@@ -25,6 +27,8 @@ import com.mademediacorp.mmastripecardscan.R
 abstract class CameraPermissionCheckingActivity :
     AppCompatActivity(), CameraPermissionEnsureable, AppSettingsOpenable {
 
+    private lateinit var storage: SharedPreferences
+
     /**
      * The camera permission was granted and camera is ready to use.
      * Note this callback will be invoked on the main thread.
@@ -36,15 +40,13 @@ abstract class CameraPermissionCheckingActivity :
      */
     private lateinit var onUserDeniedCameraPermission: () -> Unit
 
-//    private val storage by lazy {
-//        @Suppress("RestrictedApi")
-//        StorageFactory.getStorageInstance(this, PERMISSION_STORAGE_NAME)
-//    }
-
-    val storage = getSharedPreferences(PERMISSION_STORAGE_NAME, Context.MODE_PRIVATE)
-
-
     private val mainScope = CoroutineScope(Dispatchers.Main)
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // Initialize the SharedPreferences here
+        storage = getSharedPreferences(PERMISSION_STORAGE_NAME, Context.MODE_PRIVATE)
+    }
 
     @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
     override fun ensureCameraPermission(
@@ -77,7 +79,6 @@ abstract class CameraPermissionCheckingActivity :
             }
         }
     }
-
 
     /**
      * Handle permission status changes. If the camera permission has been granted, start it. If
@@ -114,9 +115,7 @@ abstract class CameraPermissionCheckingActivity :
                 requestCameraPermission()
             }
         builder.show()
-        //storage.storeValue(PERMISSION_RATIONALE_SHOWN, true)
         storage.edit().putBoolean(PERMISSION_RATIONALE_SHOWN, true).apply()
-
     }
 
     /**
@@ -135,7 +134,6 @@ abstract class CameraPermissionCheckingActivity :
             }
         builder.show()
     }
-
 
     /**
      * Request permission to use the camera.

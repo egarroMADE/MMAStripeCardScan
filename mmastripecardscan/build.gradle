@@ -35,6 +35,9 @@ android {
         singleVariant("release") {
             withSourcesJar()
         }
+        singleVariant("debug") {
+            withSourcesJar()
+        }
     }
 }
 
@@ -55,6 +58,7 @@ dependencies {
     implementation 'org.apache.cordova:framework:10.1.1'
     implementation 'com.stripe:stripe-core:20.48.1'
     implementation 'com.stripe:ml-core-default:20.48.1'
+    implementation 'com.google.mlkit:text-recognition:16.0.1'
     ksp 'com.google.dagger:dagger-compiler:2.48'
     testImplementation 'junit:junit:4.13.2'
 }
@@ -67,7 +71,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.mademediacorp'
                 artifactId = 'mmastripecardscan'
-                version = '0.1.0'
+                version = '0.3.2'
             }
         }
 

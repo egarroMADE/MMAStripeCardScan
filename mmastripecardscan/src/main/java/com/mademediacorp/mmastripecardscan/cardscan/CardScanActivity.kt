@@ -67,25 +67,21 @@ internal class CardScanActivity : ScanActivity(), SimpleScanStateful<CardScanSta
 
     override val minimumAnalysisResolution = MINIMUM_RESOLUTION
 
-    private val viewBinding by lazy {
-        StripeActivityCardscanBinding.inflate(layoutInflater)
-    }
+    // Initialize viewBinding inside onCreate()
+    private lateinit var viewBinding: StripeActivityCardscanBinding
 
-    override val previewFrame: ViewGroup by lazy {
-        viewBinding.cameraView.previewFrame
-    }
+    // FIXED: Change from lazy to computed properties to avoid accessing viewBinding before initialization
+    override val previewFrame: ViewGroup
+        get() = viewBinding.cameraView.previewFrame
 
-    private val viewFinderWindow: View by lazy {
-        viewBinding.cameraView.viewFinderWindowView
-    }
+    private val viewFinderWindow: View
+        get() = viewBinding.cameraView.viewFinderWindowView
 
-    private val viewFinderBorder: ImageView by lazy {
-        viewBinding.cameraView.viewFinderBorderView
-    }
+    private val viewFinderBorder: ImageView
+        get() = viewBinding.cameraView.viewFinderBorderView
 
-    private val viewFinderBackground: ViewFinderBackground by lazy {
-        viewBinding.cameraView.viewFinderBackgroundView
-    }
+    private val viewFinderBackground: ViewFinderBackground
+        get() = viewBinding.cameraView.viewFinderBackgroundView
 
     override var scanState: CardScanState? = CardScanState.NotFound
 
@@ -95,9 +91,7 @@ internal class CardScanActivity : ScanActivity(), SimpleScanStateful<CardScanSta
 
     override val cameraAdapterBuilder = ::getScanCameraAdapter
 
-    /**
-     * The listener which handles results from the scan.
-     */
+    // The listener which handles results from the scan.
     override val resultListener: CardScanResultListener =
         object : CardScanResultListener {
 
@@ -108,7 +102,8 @@ internal class CardScanActivity : ScanActivity(), SimpleScanStateful<CardScanSta
                         INTENT_PARAM_RESULT,
                         CardScanSheetResult.Completed(
                             ScannedCard(
-                                pan = card.pan
+                                value = card.value,
+                                recognitionMethod = card.recognitionMethod
                             )
                         )
                     )
@@ -150,9 +145,9 @@ internal class CardScanActivity : ScanActivity(), SimpleScanStateful<CardScanSta
                 launch(Dispatchers.Main) {
                     changeScanState(CardScanState.Correct)
                     cameraAdapter.unbindFromLifecycle(this@CardScanActivity)
-                    resultListener.cardScanComplete(ScannedCard(result.pan))
+                    resultListener.cardScanComplete(ScannedCard(result.value, result.method.toString()))
                     closeScanner()
-                }.let { }
+                }
             }
 
             /**
@@ -160,24 +155,32 @@ internal class CardScanActivity : ScanActivity(), SimpleScanStateful<CardScanSta
              */
             override suspend fun onInterimResult(
                 result: MainLoopAggregator.InterimResult
-            ) = launch(Dispatchers.Main) {
-                when (result.state) {
-                    is MainLoopState.Initial -> changeScanState(CardScanState.NotFound)
-                    is MainLoopState.OcrFound -> changeScanState(CardScanState.Found)
-                    is MainLoopState.Finished -> changeScanState(CardScanState.Correct)
+            ) {
+                launch(Dispatchers.Main) {
+                    when (result.state) {
+                        is MainLoopState.Initial -> changeScanState(CardScanState.NotFound)
+                        is MainLoopState.OcrFound -> changeScanState(CardScanState.Found)
+                        is MainLoopState.Finished -> changeScanState(CardScanState.Correct)
+                    }
                 }
-            }.let { }
+            }
 
-            override suspend fun onReset() = launch(Dispatchers.Main) {
-                changeScanState(CardScanState.NotFound)
-            }.let { }
+            override suspend fun onReset() {
+                launch(Dispatchers.Main) {
+                    changeScanState(CardScanState.NotFound)
+                }
+            }
+
         }
     }
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        // Initialize the viewBinding FIRST, before calling super.onCreate()
+        viewBinding = StripeActivityCardscanBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
+
+        super.onCreate(savedInstanceState)
 
         val cardScanSheetParams = intent.extras?.let {
             BundleCompat.getParcelable(it, INTENT_PARAM_REQUEST, CardScanSheetParams::class.java)

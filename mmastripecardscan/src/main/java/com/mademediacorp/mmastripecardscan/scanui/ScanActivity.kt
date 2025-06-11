@@ -73,10 +73,9 @@ internal abstract class ScanActivity : CameraPermissionCheckingActivity(), Corou
         CameraErrorListener
     ) -> CameraAdapter<CameraPreviewImage<Bitmap>>
 
-    internal val cameraAdapter by lazy { buildCameraAdapter(cameraAdapterBuilder) }
-    private val cameraErrorListener by lazy {
-        DefaultCameraErrorListener(this) { t -> scanFailure(t) }
-    }
+    // Declare the properties without initialization
+    internal lateinit var cameraAdapter: CameraAdapter<CameraPreviewImage<Bitmap>>
+    private lateinit var cameraErrorListener: CameraErrorListener
 
     /**
      * The listener which will handle the results from the scan.
@@ -85,6 +84,10 @@ internal abstract class ScanActivity : CameraPermissionCheckingActivity(), Corou
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Initialize cameraErrorListener and cameraAdapter in onCreate when context is available
+        cameraErrorListener = DefaultCameraErrorListener(this) { t -> scanFailure(t) }
+        cameraAdapter = buildCameraAdapter(cameraAdapterBuilder)
 
         onBackPressedDispatcher.addCallback {
             resultListener.userCanceled(CancellationReason.Back)

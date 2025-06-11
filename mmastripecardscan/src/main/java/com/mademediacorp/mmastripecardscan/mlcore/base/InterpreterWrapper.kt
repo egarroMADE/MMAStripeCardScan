@@ -1,5 +1,6 @@
 package com.mademediacorp.mmastripecardscan.mlcore.base
 
+import android.content.Context
 import androidx.annotation.RestrictTo
 
 /**
@@ -7,6 +8,7 @@ import androidx.annotation.RestrictTo
  */
 @RestrictTo(RestrictTo.Scope.LIBRARY_GROUP)
 interface InterpreterWrapper {
+    var context: Context?
     fun runForMultipleInputsOutputs(
         inputs: Array<Any>,
         outputs: Map<Int, Any>

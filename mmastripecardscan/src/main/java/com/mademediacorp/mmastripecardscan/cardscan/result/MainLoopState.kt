@@ -10,9 +10,9 @@ internal sealed class MainLoopState(timeSource: TimeSource) : MachineState(timeS
 
     companion object {
         /**
-         * The duration after which the scan will reset if no card is visible.
+         * The duration after which the scan will reset if no card or DNI is visible.
          */
-        val NO_CARD_VISIBLE_DURATION = 5.seconds
+        val NO_CARD_NOR_DNI_VISIBLE_DURATION = 5.seconds
 
         /**
          * The maximum duration for which to search for a card number.
@@ -33,64 +33,75 @@ internal sealed class MainLoopState(timeSource: TimeSource) : MachineState(timeS
     class Initial(timeSource: TimeSource) : MainLoopState(timeSource) {
         override suspend fun consumeTransition(
             transition: SSDOcr.Prediction
-        ): MainLoopState = if (transition.pan.isNullOrEmpty()) {
-            this
-        } else {
+        ): MainLoopState = if (transition.pan.isNullOrEmpty() && !transition.dni.isNullOrEmpty()) {
             OcrFound(
                 timeSource = timeSource,
-                pan = transition.pan
+                value = transition.dni
             )
+        } else if (transition.dni.isNullOrEmpty() && !transition.pan.isNullOrEmpty()) {
+            OcrFound(
+                timeSource = timeSource,
+                value = transition.pan
+            )
+        } else {
+            this
         }
     }
 
     class OcrFound private constructor(
         timeSource: TimeSource,
-        private val panCounter: ItemCounter<String>
+        private val valueCounter: ItemCounter<String>
     ) : MainLoopState(timeSource) {
 
         internal constructor(
             timeSource: TimeSource,
-            pan: String
+            value: String
         ) : this(
             timeSource,
-            ItemCounter(pan)
+            ItemCounter(value)
         )
 
-        private val mostLikelyPan: String
-            get() = panCounter.getHighestCountItem().second
+        private val mostLikelyValue: String
+            get() = valueCounter.getHighestCountItem().second
 
-        private var lastCardVisible = TimeSource.Monotonic.markNow()
+        private var lastValueVisible = TimeSource.Monotonic.markNow()
 
-        private fun highestOcrCount() = panCounter.getHighestCountItem().first
-        private fun isOcrSatisfied() = highestOcrCount() >= DESIRED_OCR_AGREEMENT
+        private fun highestValueCount() = valueCounter.getHighestCountItem().first
+        private fun isOcrSatisfied() = highestValueCount() >= DESIRED_OCR_AGREEMENT
         private fun isTimedOut() = reachedStateAt.elapsedNow() > OCR_SEARCH_DURATION
-        private fun isNoCardVisible() = lastCardVisible.elapsedNow() > NO_CARD_VISIBLE_DURATION
+        private fun noDataVisible() = lastValueVisible.elapsedNow() > NO_CARD_NOR_DNI_VISIBLE_DURATION
 
         override suspend fun consumeTransition(
             transition: SSDOcr.Prediction
         ): MainLoopState {
             val transitionPan = transition.pan
-            if (!transitionPan.isNullOrEmpty()) {
-                panCounter.countItem(transitionPan)
-                lastCardVisible = TimeSource.Monotonic.markNow()
-            }
+            val transitionDNI = transition.dni
 
-            val pan = mostLikelyPan
+            if (!transitionPan.isNullOrEmpty()) {
+                valueCounter.countItem(transitionPan)
+            }
+            if (!transitionDNI.isNullOrEmpty()) {
+                valueCounter.countItem(transitionDNI)
+            }
+            lastValueVisible = TimeSource.Monotonic.markNow()
+
+            val value = mostLikelyValue
 
             return when {
                 isOcrSatisfied() || isTimedOut() ->
                     Finished(
                         timeSource = timeSource,
-                        pan = pan
+                        value = value,
+                        transition.recognitionMethod
                     )
-                isNoCardVisible() ->
+                noDataVisible() ->
                     Initial(timeSource)
                 else -> this
             }
         }
     }
 
-    class Finished(timeSource: TimeSource, val pan: String) : MainLoopState(timeSource) {
+    class Finished(timeSource: TimeSource, val value: String, val method: SSDOcr.Prediction.RecognitionMethod) : MainLoopState(timeSource) {
         override suspend fun consumeTransition(
             transition: SSDOcr.Prediction
         ): MainLoopState = this

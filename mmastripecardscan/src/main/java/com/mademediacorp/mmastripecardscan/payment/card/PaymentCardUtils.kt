@@ -288,6 +288,13 @@ internal fun isValidPan(pan: String?): Boolean {
     }
 }
 
+@CheckResult
+internal fun isValidDNI(dni: String?): Boolean {
+    if (dni.isNullOrEmpty()) return false
+    val dniValidator = LengthDNIValidator + MRZDNIValidator
+    return dniValidator.isValidDNI(dni)
+}
+
 /**
  * Determine if an IIN is valid.
  */

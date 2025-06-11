@@ -29,8 +29,13 @@ internal class MainLoopAggregator(
 ) {
 
     internal data class FinalResult(
-        val pan: String
-    )
+        val value: String,
+        val method: SSDOcr.Prediction.RecognitionMethod
+    ) {
+        override fun toString(): String {
+            return method.toString()  // This will return "TENSORFLOW" or "ML_KIT"
+        }
+    }
 
     internal data class InterimResult(
         val analyzerResult: SSDOcr.Prediction,
@@ -54,7 +59,7 @@ internal class MainLoopAggregator(
         )
 
         return if (currentState is MainLoopState.Finished) {
-            interimResult to FinalResult(currentState.pan)
+            interimResult to FinalResult(currentState.value, currentState.method)
         } else {
             interimResult to null
         }
